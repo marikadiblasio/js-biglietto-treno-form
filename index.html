@@ -11,26 +11,33 @@
     <title>Acquista il tuo biglietto</title>
 </head>
 <body class="bg-light">
-    <header>
+    <header class="mb-3">
         <h1 class="text-white display-3 fw-semibold py-5 text-center">Acquista il tuo biglietto</h1>
     </header>
     <!-- Travel Info -->
-    <section class="container-lg mt-3 border border-2 border-success-subtle rounded">
+    <section class="container-lg mb-3 border border-2 border-success-subtle rounded">
         <h2 class="mb-3">Dati del viaggio</h2>
         <div class="row">
             <div class="col-12 mb-3">
                 <label for="name">Nome</label>
                 <input class="w-100 rounded border border-light-subtle" type="text" name="name" id="name" placeholder="Inserire qui il nome del passeggero">
             </div>
-            <div class="col-6 mb-3">
+            <div class="col-12 col-sm-6 mb-3">
                 <label class="d-block" for="kmTrip">Distanza</label>
                 <input class="w-100 rounded border border-light-subtle" type="number" name="kmTrip" id="kmTrip" placeholder="Inserire qui il numero dei chilometri da percorrere">
             </div>
-            <div class="col-6 mb-3">
+            <div class="col-12 col-sm-6 mb-3">
                 <label for="userAge">Et&agrave; del passeggero</label>
                 <input class="w-100 rounded border border-light-subtle" type="number" name="userAge" id="userAge" placeholder="Inserire qui l'et&agrave; del passeggero">
             </div>
-            <button class="btn btn-success mb-3 fs-4 w-50 mx-auto">Calcola il prezzo</button>
+            <button class="btn btn-success mb-3 fs-4 col-12 col-sm-5 me-sm-2 ms-sm-auto  mx-auto">Calcola il prezzo</button>
+            <button id="reset" class="btn btn-danger mb-3 fs-4 col-12 col-sm-5 ms-sm-2 me-sm-auto mx-auto">Annulla</button>
+        </div>
+    </section>
+    <section id="ticket" class="container-lg d-none">
+        <div class="card border border-2 border-success-subtle">
+            <h5 class="card-header text-success bg-success-subtle">Il tuo biglietto</h5>
+            <div id="ticketBody" class="card-body"></div>
         </div>
     </section>
     <script type="text/javascript" src="./js/script.js"></script>

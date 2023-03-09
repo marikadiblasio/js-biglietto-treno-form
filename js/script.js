@@ -19,15 +19,13 @@ const discountJ = 0.20;
 const discountS = 0.40;
 //Variabili input
 const boxKmTrip = document.querySelector('input[name=kmTrip]');
-const boxUserAge = document.querySelector('input[name=userAge');
+const boxUserAge = document.querySelector('input[name=userAge]');
 //Variabile bottone
 const btnCalc = document.querySelector('button');
 //AddEventListener
 btnCalc.addEventListener('click', function() {
     const kmTrip = parseInt(boxKmTrip.value);
-    //console.log(kmTrip);
     const userAge = parseInt(boxUserAge.value);
-    //console.log(userAge);
     let price = priceKm * kmTrip;
     if ((userAge) && (kmTrip)) {
         if (userAge < 18) {
@@ -35,8 +33,21 @@ btnCalc.addEventListener('click', function() {
         } else if (userAge > 65) {
             price -= price * discountS;
         }
-        console.log(`Il tuo biglietto di ${kmTrip} km per un viaggiatore di ${userAge} anni costerà ${price.toFixed(2)} €`);
+        document.getElementById('ticketBody').innerHTML += (`<p>Il tuo biglietto di ${kmTrip} km per un viaggiatore di ${userAge} anni costerà ${price.toFixed(2)} €</p>`);
     } else {
         console.log('Inserisci i numeri nei campi richiesti');
     }
+    const ticket = document.getElementById('ticket');
+    ticket.classList.remove('d-none');
+})
+//Reset
+const btnReset = document.getElementById('reset');
+btnReset.addEventListener('click', function(){
+    boxKmTrip.value = '';
+    boxUserAge.value = '';
+    document.getElementById('name').value = '';
+    document.getElementById('ticketBody').innerHTML = '';
+    ticket.classList.add('d-none');
+
+    
 })
