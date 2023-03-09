@@ -20,6 +20,7 @@ const discountS = 0.40;
 //Variabili input
 const boxKmTrip = document.querySelector('input[name=kmTrip]');
 const boxUserAge = document.querySelector('input[name=userAge]');
+const topCard = document.querySelector('.card-header');
 //Variabile bottone
 const btnCalc = document.querySelector('button');
 //AddEventListener
@@ -27,15 +28,23 @@ btnCalc.addEventListener('click', function() {
     const kmTrip = parseInt(boxKmTrip.value);
     const userAge = parseInt(boxUserAge.value);
     let price = priceKm * kmTrip;
-    if ((userAge) && (kmTrip)) {
+    if (((userAge) && userAge > 0) && ((kmTrip) && kmTrip > 0)) {
         if (userAge < 18) {
             price -= price * discountJ;
         } else if (userAge > 65) {
             price -= price * discountS;
         }
+        topCard.classList.add('bg-success-subtle');
+        topCard.classList.add('text-success');
+        topCard.classList.remove('text-danger');
+        topCard.classList.remove('bg-danger-subtle');
         document.getElementById('ticketBody').innerHTML += (`<p>Il tuo biglietto di ${kmTrip} km per un viaggiatore di ${userAge} anni costerà ${price.toFixed(2)} €</p>`);
     } else {
-        console.log('Inserisci i numeri nei campi richiesti');
+        topCard.classList.remove('bg-success-subtle');
+        topCard.classList.remove('text-success');
+        topCard.classList.add('text-danger');
+        topCard.classList.add('bg-danger-subtle');
+        document.getElementById('ticketBody').innerHTML +=('<p class= text-danger>Inserisci numeri superiori a 0 nei campi richiesti</p>');
     }
     const ticket = document.getElementById('ticket');
     ticket.classList.remove('d-none');
