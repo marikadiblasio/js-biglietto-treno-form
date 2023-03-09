@@ -15,7 +15,7 @@
         <h1 class="text-white display-3 fw-semibold py-5 text-center">Acquista il tuo biglietto</h1>
     </header>
     <!-- Travel Info -->
-    <section class="container-lg mb-3 border border-2 border-success-subtle rounded">
+    <section class="container-lg my-5 border-bottom border-top border-2 border-success-subtle">
         <h2 class="mb-3">Dati del viaggio</h2>
         <div class="row">
             <div class="col-12 mb-3">
@@ -34,16 +34,36 @@
             <button id="reset" class="btn btn-danger mb-3 fs-4 col-12 col-sm-5 ms-sm-2 me-sm-auto mx-auto">Annulla</button>
         </div>
     </section>
-    <section id="ticket" class="container-lg">
+    <section id="ticket" class="container-lg d-none">
         <div class="card border border-2 border-success-subtle">
             <h5 class="card-header">Il tuo biglietto</h5>
-            <div id="ticketBody" class="card-body">
-                <div class="row">
-                    <div class="col-auto">Passeggero</div>
-                    <div class="col-auto">Distanza</div>
-                    <div class="col-auto">Tariffa</div>
-                    <div class="col-auto">Prezzo</div>
-                    <button class="btn btn-success">Acquista</button>
+            <div id="ticketBody" class="card-body justify-content-center">
+               <div class="row align-items-center justify-content-center mb-3">
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-header">Passeggero</div>
+                            <div id="ticket-name" class="card-body"></div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="card">
+                            <div class="card-header">Distanza</div>
+                            <div id="ticket-km"class="card-body"></div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="card">
+                            <div class="card-header">Tariffa</div>
+                            <div id="ticket-rate" class="card-body"></div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="card">
+                            <div class="card-header">Prezzo</div>
+                            <div id="ticket-price" class="card-body"></div>
+                        </div>
+                    </div>
+                    <button class="btn w-25 mt-3 btn-success">Acquista</button>
                 </div>
             </div>
         </div>

@@ -23,7 +23,6 @@ const boxKmTrip = document.querySelector('input[name=kmTrip]');
 const boxUserAge = document.querySelector('input[name=userAge]');
 const boxName = document.querySelector('input[name=name]');
 const topCard = document.querySelector('.card-header');
-//Variabile bottone
 const btnCalc = document.querySelector('button');
 //AddEventListener
 btnCalc.addEventListener('click', function() {
@@ -44,7 +43,12 @@ btnCalc.addEventListener('click', function() {
             topCard.classList.add('text-success');
             topCard.classList.remove('text-danger');
             topCard.classList.remove('bg-danger-subtle');
-            document.getElementById('ticketBody').innerHTML += (`<p>Il tuo biglietto di ${kmTrip} km per un viaggiatore di ${userAge} anni costerà ${price.toFixed(2)} €</p>`);
+            document.getElementById('ticket-name').innerHTML += (`${name}`);
+            document.getElementById('ticket-km').innerHTML += (`${kmTrip} Km`);
+            document.getElementById('ticket-rate').innerHTML += (`${rate}`);
+            document.getElementById('ticket-price').innerHTML += (`${price.toFixed(2)} €`);
+            
+            //document.getElementById('ticketBody').innerHTML += (`<p>Il tuo biglietto di ${kmTrip} km per un viaggiatore di ${userAge} anni costerà ${price.toFixed(2)} €</p>`);
         } else {
             topCard.classList.remove('bg-success-subtle');
             topCard.classList.remove('text-success');
