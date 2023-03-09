@@ -18,3 +18,35 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
 //kmtrip e userAge da input
 //priceKm const, discountJ, discountS, let - price.toFixed(2)
 //console.log
+//Variabili
+const priceKm = 0.21;
+const discountJ = 0.20;
+const discountS = 0.40;
+//let price = priceKm * kmTrip;
+//Variabili input
+const boxKmTrip = document.querySelector('input[name=kmTrip]');
+const boxUserAge = document.querySelector('input[name=userAge');
+//console.log(boxKmTrip);
+//console.log(boxUserAge);
+//Variabile bottone
+const btnCalc = document.querySelector('button');
+//console.log(btnCalc);
+
+//AddEventListener
+btnCalc.addEventListener('click', function() {
+    const kmTrip = parseInt(boxKmTrip.value);
+    //console.log(kmTrip);
+    const userAge = parseInt(boxUserAge.value);
+    //console.log(userAge);
+    let price = priceKm * kmTrip;
+    if ((userAge) && (kmTrip)) {
+        if (userAge < 18) {
+            price -= price * discountJ;
+        } else if (userAge > 65) {
+            price -= price * discountS;
+        }
+        console.log(`Il tuo biglietto di ${kmTrip} km per un viaggiatore di ${userAge} anni costerà ${price.toFixed(2)} €`);
+    } else {
+        console.log('Inserisci i numeri nei campi richiesti');
+    }
+})
