@@ -13,25 +13,15 @@ Solo una volta che il milestone 1 sarà completo e funzionante allora realizzere
 Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagina (il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 */
 
-//Milestone 1 
- 
-//kmtrip e userAge da input
-//priceKm const, discountJ, discountS, let - price.toFixed(2)
-//console.log
 //Variabili
 const priceKm = 0.21;
 const discountJ = 0.20;
 const discountS = 0.40;
-//let price = priceKm * kmTrip;
 //Variabili input
 const boxKmTrip = document.querySelector('input[name=kmTrip]');
 const boxUserAge = document.querySelector('input[name=userAge');
-//console.log(boxKmTrip);
-//console.log(boxUserAge);
 //Variabile bottone
 const btnCalc = document.querySelector('button');
-//console.log(btnCalc);
-
 //AddEventListener
 btnCalc.addEventListener('click', function() {
     const kmTrip = parseInt(boxKmTrip.value);

@@ -10,14 +10,29 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>Acquista il tuo biglietto</title>
 </head>
-<body>
-    <!-- Milestone 1-->
-    <!--2 input e 1 bottone -->
-    <div>
-        <input type="number" name="kmTrip" id="kmTrip" placeholder="Inserire qui il numero dei chilometri da percorrere">
-        <input type="number" name="userAge" id="userAge" placeholder="Inserire qui l'et&agrave; del passeggero">
-        <button>Calcola il prezzo</button>
-    </div>
+<body class="bg-light">
+    <header>
+        <h1 class="text-white display-3 fw-semibold py-5 text-center">Acquista il tuo biglietto</h1>
+    </header>
+    <!-- Travel Info -->
+    <section class="container-lg mt-3 border border-2 border-success-subtle rounded">
+        <h2 class="mb-3">Dati del viaggio</h2>
+        <div class="row">
+            <div class="col-12 mb-3">
+                <label for="name">Nome</label>
+                <input class="w-100 rounded border border-light-subtle" type="text" name="name" id="name" placeholder="Inserire qui il nome del passeggero">
+            </div>
+            <div class="col-6 mb-3">
+                <label class="d-block" for="kmTrip">Distanza</label>
+                <input class="w-100 rounded border border-light-subtle" type="number" name="kmTrip" id="kmTrip" placeholder="Inserire qui il numero dei chilometri da percorrere">
+            </div>
+            <div class="col-6 mb-3">
+                <label for="userAge">Et&agrave; del passeggero</label>
+                <input class="w-100 rounded border border-light-subtle" type="number" name="userAge" id="userAge" placeholder="Inserire qui l'et&agrave; del passeggero">
+            </div>
+            <button class="btn btn-success mb-3 fs-4 w-50 mx-auto">Calcola il prezzo</button>
+        </div>
+    </section>
     <script type="text/javascript" src="./js/script.js"></script>
 </body>
 </html>
