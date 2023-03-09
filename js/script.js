@@ -67,6 +67,7 @@ const btnReset = document.getElementById('reset');
 btnReset.addEventListener('click', function(){
     boxKmTrip.value = '';
     boxUserAge.value = '';
+    document.querySelector('label').innerHTML = 'Nome';
     boxName.value = '';
     document.getElementById('ticketBody').innerHTML = '';
     ticket.classList.add('d-none');
